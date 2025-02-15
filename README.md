@@ -64,7 +64,6 @@ The frontend communicates with the backend by consuming the following APIs:
 ### Folder Structure 📂
 
 - `src/app/`:
-  - `components/`: Contains Angular components for displaying categories and products.
   - `services/`: Contains Angular services for making API requests (CategoryService, ProductService).
 
 ---
