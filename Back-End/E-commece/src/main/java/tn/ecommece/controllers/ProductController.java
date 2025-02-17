@@ -2,7 +2,6 @@ package tn.ecommece.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -10,7 +9,6 @@ import tn.ecommece.entities.Category;
 import tn.ecommece.entities.Product;
 import tn.ecommece.repos.CategoryRepository;
 import tn.ecommece.repos.ProductRepository;
-import tn.ecommece.services.FileStorageService;
 import tn.ecommece.services.ProductService;
 
 import java.io.IOException;
@@ -25,6 +23,8 @@ import java.util.Optional;
 @CrossOrigin("*")
 public class ProductController {
 
+
+    @Autowired
     private final ProductService productService;
 
     @Autowired
@@ -33,8 +33,7 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepository;
 
-    @Autowired
-    private FileStorageService fileStorageService;
+
 
     public ProductController(ProductService productService) {
         this.productService = productService;
@@ -120,7 +119,7 @@ public class ProductController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product non trouvée");
         }
 
-        Product product = optionalProduct.get();  // Here we use the retrieved product
+        Product product = optionalProduct.get();
         product.setName(name);
         product.setDescription(description);
         product.setPrice(price);
