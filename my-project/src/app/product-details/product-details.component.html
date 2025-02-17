@@ -1,0 +1,65 @@
+<section class="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-12">
+    <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+      <div class="flex flex-col lg:flex-row items-center justify-between space-x-8">
+        
+        
+        <div class="lg:w-1/2 w-full flex justify-center bg-gray-50">
+          <img [src]="root_productImage + product.image" alt="{{ product.name }}" class="max-w-full h-auto rounded-lg shadow-lg">
+        </div>
+  
+        <div class="lg:w-1/2 w-full mt-6 lg:mt-0">
+          <h1 class="text-4xl font-semibold text-gray-800 dark:text-white">{{ product.name }}</h1>
+          <p class="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-400">{{ product.description }}</p>
+          
+          <div class="flex items-center gap-8 mt-6">
+
+            <div class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c-.3-.92-1.603-.92-1.902 0L6.453 5.074l-2.284-.331c-.991-.144-1.383 1.05-.672 1.493l1.648 1.606-1.172 2.278c-.338.655.283 1.392.922 1.232l2.298-.697 1.223 2.394c.304.586 1.161.586 1.465 0l1.223-2.394 2.298.697c.64.16 1.26-.577.922-1.232l-1.172-2.278 1.648-1.606c.711-.443.319-1.637-.672-1.493l-2.284.331-1.694-2.147z"/>
+              </svg>
+              <p class="text-lg text-gray-500 dark:text-gray-400">5 / 5</p>
+            </div>
+  
+            
+            <p class="text-lg font-medium text-green-500">In Stock</p>
+          </div>
+  
+          <div class="flex justify-between items-center mt-6">
+            <!-- Price -->
+            <p class="text-3xl font-extrabold text-gray-900 dark:text-white">${{ product.price }}</p>
+            
+           
+          </div>
+  
+          <!-- Features -->
+          <div class="mt-8">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Key Features</h3>
+            <ul class="list-disc pl-6 mt-4 space-y-2 text-gray-600 dark:text-gray-400">
+              <li>Featur 1</li>
+              <li>Featur 2</li>
+              <li>Featur 3</li>
+            </ul>
+          </div>
+  
+          <!-- Product Specifications -->
+          <div class="mt-8">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Specifications</h3>
+            <ul class="list-none pl-6 mt-4 space-y-2 text-gray-600 dark:text-gray-400">
+              <li><strong>Category: </strong>{{product.category.name}}</li>
+              <li><strong>Model: </strong>product model</li>
+              <li><strong>Dimensions: </strong> product dimension</li>
+              <li><strong>Weight: </strong> product weigh</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Show More Button -->
+      <div class="w-full text-center mt-6">
+        <button type="button" class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 cursor-pointer">
+          Add To Cart
+        </button>
+      </div>
+    </div>
+  </section>
+  

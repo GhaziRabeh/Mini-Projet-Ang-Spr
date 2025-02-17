@@ -4,6 +4,7 @@ import { Category } from '../Model/Category';
 import { APP_CONFIG } from '../../config/URL';
 import { CategoryServiceService } from '../service/category-service.service';
 import { ProductServiceService } from '../service/product-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -27,13 +28,14 @@ export class ProductComponent implements OnInit {
   imageFile: File | null = null;
 
   constructor(private categoryService: CategoryServiceService,
-              private productService: ProductServiceService) {}
+              private productService: ProductServiceService,
+              private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.loadCategory();
     this.loadProduct();
   }
-
+//get
   loadCategory() {
     this.categoryService.getCategory().subscribe(
       (dataCategory: any) => { 
